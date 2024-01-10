@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox prefHeight="526.0" prefWidth="867.0" style="-fx-background-color:B1F3E3;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gestion.emploi.controllers.MainSceneController">
+    <AnchorPane fx:id="quli" prefHeight="526.0" prefWidth="339.0" styleClass="anchor">
+      <children>
+         <HBox prefHeight="27.0" prefWidth="347.0">
+            <children>
+               <Label text="fourmelaire d'enrigestrement des enseignants" />
+            </children>
+         </HBox>
+         <Button fx:id="saveData" layoutX="14.0" layoutY="139.0" mnemonicParsing="false" onAction="#save" text="Enregistrement">
+             <font>
+                 <Font name="Arial Bold" size="13.0" />
+             </font>
+         </Button>
+         <Button layoutX="174.0" layoutY="139.0" mnemonicParsing="false" onAction="#modifierEnsign" text="Modifier">
+             <font>
+                 <Font name="Arial Bold" size="13.0" />
+             </font>
+         </Button>
+         <Button layoutX="102.0" layoutY="177.0" mnemonicParsing="false" onAction="#deleteEnsign" text="Supprimer">
+             <font>
+                 <Font name="Arial Bold" size="13.0" />
+             </font>
+         </Button>
+         <TextField fx:id="matricule" layoutX="74.0" layoutY="27.0" />
+         <Label layoutX="14.0" layoutY="98.0" text="Contact  " />
+         <TextField fx:id="nom" layoutX="74.0" layoutY="94.0" />
+         <Label layoutX="11.0" layoutY="62.0" text="Nom    " />
+         <Label layoutX="7.0" layoutY="31.0" prefHeight="17.0" prefWidth="77.0" text="Matricule  " />
+         <TextField fx:id="contact" layoutX="74.0" layoutY="58.0" />
+         <Button fx:id="reche" layoutX="240.0" layoutY="27.0" mnemonicParsing="false" onAction="#rechechechEnsign" text="Recherecher">
+             <font>
+                 <Font name="Arial Bold" size="13.0" />
+             </font>
+         </Button>
+         <Label layoutX="9.0" layoutY="224.0" prefHeight="17.0" prefWidth="321.0" text="fourmelaire d'enrigestrement des séance de cours " />
+         <Label layoutX="13.0" layoutY="273.0" prefHeight="17.0" prefWidth="77.0" text="Classe" />
+         <Label layoutX="13.0" layoutY="304.0" prefHeight="17.0" prefWidth="77.0" text="Matiére" />
+         <Label layoutX="13.0" layoutY="339.0" prefHeight="17.0" prefWidth="77.0" text="Jour" />
+         <Label layoutX="13.0" layoutY="377.0" prefHeight="17.0" prefWidth="77.0" text="Heure" />
+         <Label layoutX="6.0" layoutY="419.0" prefHeight="17.0" prefWidth="129.0" text="Matricule enseignant " />
+         <Button fx:id="saveData1" layoutX="105.0" layoutY="459.0" mnemonicParsing="false" onAction="#save2" text="Enregistrement">
+            <font>
+               <Font name="Arial Bold" size="13.0" />
+            </font>
+         </Button>
+         <Button layoutX="120.0" layoutY="495.0" mnemonicParsing="false" onAction="#openInterface" text="REQUETES">
+            <font>
+               <Font name="Arial Bold" size="13.0" />
+            </font>
+         </Button>
+
+         <ComboBox fx:id="classe" layoutX="74.0" layoutY="269.0" prefWidth="150.0" promptText="Selectionner classe">
+          <items>
+              <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="1er" />
+                  <String fx:value="2eme" />
+                  <String fx:value="3eme" />
+                  <String fx:value="4eme" />
+                  <String fx:value="5eme" />
+                  <String fx:value="6eme" />
+              </FXCollections>
+          </items>
+         </ComboBox>
+         <TextField fx:id="matiere" layoutX="75.0" layoutY="302.0" />
+         <ComboBox fx:id="jour" layoutX="75.0" layoutY="336.0" prefWidth="150.0" promptText="Selectionner jour">
+            <items>
+               <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Lundi" />
+                  <String fx:value="Mardi" />
+                  <String fx:value="Mecrodi" />
+                  <String fx:value="Jeudi" />
+                  <String fx:value="Vendredi" />
+                  <String fx:value="Samdi" />
+                  <String fx:value="demanche" />
+               </FXCollections>
+            </items>
+         </ComboBox>
+         <ComboBox fx:id="heur" layoutX="75.0" layoutY="373.0" prefWidth="150.0" promptText="Selectionner Heuer">
+            <items>
+               <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="1er H" />
+                  <String fx:value="2eme H" />
+                  <String fx:value="3eme H" />
+                  <String fx:value="4eme H" />
+                  <String fx:value="5eme H" />
+                  <String fx:value="7eme H" />
+                  <String fx:value="8eme H" />
+               </FXCollections>
+            </items>
+         </ComboBox>
+         <TextField fx:id="mat" layoutX="134.0" layoutY="415.0" />
+
+      </children>
+    </AnchorPane>
+
+    <AnchorPane focusTraversable="false" prefHeight="526.0" prefWidth="443.0">
+      <children>
+         <TableView fx:id="listEnseignant" layoutY="14.0" prefHeight="200.0" prefWidth="433.0">
+           <columns>
+               <TableColumn fx:id="matriculeColumn" prefWidth="159.0" text="Matricule">
+               <cellValueFactory>
+                   <PropertyValueFactory property="matricule" />
+               </cellValueFactory>
+               </TableColumn>
+             <TableColumn fx:id="nomColumn" prefWidth="159.0" text="Nom">
+                 <cellValueFactory>
+                     <PropertyValueFactory property="nom" />
+                 </cellValueFactory>
+             </TableColumn>
+             <TableColumn fx:id="contactColumn" prefWidth="114.0" text="Contact">
+                 <cellValueFactory>
+                     <PropertyValueFactory property="contact" />
+                 </cellValueFactory>
+             </TableColumn>
+               <TableColumn fx:id="matriculeColumn1" prefWidth="159.0" text="Matricule">
+                  <cellValueFactory>
+                     <PropertyValueFactory property="matricule" />
+                  </cellValueFactory>
+               </TableColumn>
+           </columns>
+         </TableView>
+
+          <TableView fx:id="seanceTab" layoutX="1.0" layoutY="250.0" prefHeight="209.0" prefWidth="749.0">
+              <columns>
+                  <TableColumn fx:id="matriculeColumn1" prefWidth="159.0" text="Classe">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="classcol" />
+                      </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="contactColumn1" prefWidth="114.0" text="Jour">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="jourCol" />
+                      </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="matriculeColumn11" prefWidth="159.0" text="Heure">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="heureCol" />
+                      </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="matriculeColumn113" prefWidth="159.0" text="Matiére">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="matCol" />
+                      </cellValueFactory>
+                  </TableColumn>
+
+                  <TableColumn fx:id="matriculeColumn112" prefWidth="159.0" text="Enseginat">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="matEnCol" />
+                      </cellValueFactory>
+                  </TableColumn>
+              </columns>
+          </TableView>
+            </children>
+         </AnchorPane>
+    
+</HBox>
