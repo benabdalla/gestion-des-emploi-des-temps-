@@ -18,7 +18,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -179,7 +178,7 @@ public class MainSceneController {
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 // Processing the result set
                 while (resultSet.next()) {
-                    seanceObservableList.add(new DtoSeance(resultSet.getString("classe"), resultSet.getString("enseignant_id"), resultSet.getString("matiere"), resultSet.getString("jour"), resultSet.getString("heure")));
+                    seanceObservableList.add(new DtoSeance(resultSet.getString("classe"),resultSet.getString("id_seance"), resultSet.getString("enseignant_id"), resultSet.getString("matiere"), resultSet.getString("jour"), resultSet.getString("heure")));
 
                 }
             } catch (SQLException e) {

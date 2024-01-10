@@ -5,14 +5,16 @@ import javafx.beans.property.StringProperty;
 
 public class DtoSeance {
     private final StringProperty classe;
+    private final StringProperty id_seance;
     private final StringProperty matiere;
     private final StringProperty jour;
     private final StringProperty heure;
     private final StringProperty enseignantId;
 
 
-    public DtoSeance(String className, String matiere, String jour, String heure, String ensignant) {
+    public DtoSeance(String className, String idSeance, String matiere, String jour, String heure, String ensignant) {
         this.classe = new SimpleStringProperty(className);
+        id_seance = new SimpleStringProperty(idSeance);
         this.matiere = new SimpleStringProperty(matiere);
         this.jour = new SimpleStringProperty(jour);
         this.heure =new SimpleStringProperty(heure);

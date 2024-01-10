@@ -46,6 +46,8 @@ public class EmploiController {
     @FXML
     private TableColumn<DtoSeanceEns, String> matriculeColumn114;
     @FXML
+    private TableColumn<DtoSeanceEns, String> matriculeColumn115;
+    @FXML
     private TableColumn<DtoSeanceEns, String> matriculeColumn112;
 
     @FXML
@@ -59,7 +61,9 @@ public class EmploiController {
         matriculeColumn11.setCellValueFactory(cellData -> cellData.getValue().heureProperty());
         matriculeColumn113.setCellValueFactory(cellData -> cellData.getValue().matiereProperty());
         matriculeColumn114.setCellValueFactory(cellData -> cellData.getValue().contactProperty());
+        matriculeColumn115.setCellValueFactory(cellData -> cellData.getValue().id_seanceProperty());
         matriculeColumn112.setCellValueFactory(cellData -> cellData.getValue().enseignantProperty());
+        contactColumn1.setCellValueFactory(cellData -> cellData.getValue().jourProperty());
         contactColumn1.setCellValueFactory(cellData -> cellData.getValue().jourProperty());
 
         // Update the UI on the JavaFX Application Thread

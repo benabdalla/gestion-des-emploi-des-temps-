@@ -49,6 +49,11 @@
 
              <TableView fx:id="seanceTab" layoutY="170.0" prefHeight="209.0" prefWidth="864.0">
                  <columns>
+                     <TableColumn fx:id="matriculeColumn115" prefWidth="159.0" text="ID">
+                         <cellValueFactory>
+                             <PropertyValueFactory property="id_seance" />
+                         </cellValueFactory>
+                     </TableColumn>
                      <TableColumn fx:id="matriculeColumn1" prefWidth="159.0" text="Classe">
                          <cellValueFactory>
                              <PropertyValueFactory property="classcol" />
