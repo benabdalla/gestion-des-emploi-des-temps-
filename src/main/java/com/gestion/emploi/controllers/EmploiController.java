@@ -97,18 +97,18 @@ public class EmploiController {
         ObservableList<DtoSeanceEns> seanceObservableList = FXCollections.observableArrayList();
 
         String sql1 = "SELECT `id_seance`, `classe`, `enseignant_id`, `matiere`, `jour`, `heure` ,`nom`,`contact` FROM `seance`" +
-                " INNER JOIN enseignants en on en.matricule =seance.enseignant_id ";
+                " LEFT OUTER JOIN  enseignants en on en.matricule =seance.enseignant_id ";
 
         String sql2 = "SELECT `id_seance`, `classe`, `enseignant_id`, `matiere`, `jour`, `heure` ,`nom`,`contact` FROM `seance`" +
-                " INNER JOIN enseignants en on en.matricule =seance.enseignant_id " +
+                " LEFT OUTER JOIN enseignants en on en.matricule =seance.enseignant_id " +
                 "WHERE ( `classe` = ?) AND ( `matiere` =?);";
 
         String sql3 = "SELECT `id_seance`, `classe`, `enseignant_id`, `matiere`, `jour`, `heure` ,`nom`,`contact` FROM `seance`" +
-                " INNER JOIN enseignants en on en.matricule =seance.enseignant_id " +
+                " LEFT OUTER JOIN enseignants en on en.matricule =seance.enseignant_id " +
                 "WHERE ( `classe` = ?) AND ( `matiere` is not  null);";
 
         String sql4 = "SELECT `id_seance`, `classe`, `enseignant_id`, `matiere`, `jour`, `heure` ,`nom`,`contact` FROM `seance`" +
-                " INNER JOIN enseignants en on en.matricule =seance.enseignant_id " +
+                " LEFT OUTER JOIN enseignants en on en.matricule =seance.enseignant_id " +
                 "WHERE ( `classe` is not  null) AND ( `matiere` = ? );";
 
         String classeName = "", matier = "";
